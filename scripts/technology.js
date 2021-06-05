@@ -2,6 +2,8 @@ import { getTechnologies } from './database.js'
 
 const technologies = getTechnologies()
 
+// Event listener will go here
+
 export const Technologies = () => {
   let html = "<ul>";
 

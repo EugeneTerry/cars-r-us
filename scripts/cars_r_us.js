@@ -2,10 +2,21 @@ import {Colors} from './paintColor.js'
 import {Interiors} from './interior.js'
 import {Technologies} from './technology.js'
 import {Wheels} from './wheels.js'
+import {Orders} from './order.js'
 
 //import {Orders} from './order.js'
 //eventListener will go here later
 
+document.addEventListener(
+  "click",
+  (event) => {
+    if (event.target.id === "purchase") {
+      addPurchase()
+      FoodTruck()
+
+    }
+}
+)
 
 export const CarsRUs = () => {
   return `
@@ -32,7 +43,7 @@ export const CarsRUs = () => {
           </section>
         </article>
         <article>
-            <button id="purchase">Purchase Combo</button>
+            <button id="purchaseButton">Purchase Combo</button>
         </article>
         <article class="customerOrders">
             <h2>New Orders</h2>

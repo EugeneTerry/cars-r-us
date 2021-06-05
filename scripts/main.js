@@ -4,11 +4,11 @@ const mainContainer = document.querySelector("#container");
 
 const renderAllHTML = () => {
   mainContainer.innerHTML = CarsRUs()
-};
+}
 
-renderAllHTML();
+renderAllHTML()
 
-document.addEventListener("stateChanged", event => {
+document.addEventListener("stateChanged", () => {
   console.log("State of data has changed. Regenerating HTML...")
   renderAllHTML()
 })
