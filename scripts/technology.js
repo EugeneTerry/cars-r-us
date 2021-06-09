@@ -1,15 +1,22 @@
-import { getTechnologies } from './database.js'
+import { getTechnologies, setTechnology } from './database.js'
 
 const technologies = getTechnologies()
 
-// Event listener will go here
+document.addEventListener(
+  "change",
+  (event) => {
+    if (event.target.name === "technology") {
+        setTechnology(parseInt(event.target.value))
+    }
+  }
+)
 
 export const Technologies = () => {
   let html = "<ul>";
 
   const listItems = technologies.map(technology => {
     return `<li>
-      <input type= "radio" name= "technology" value "${technology.id}"/> ${technology.name}
+      <input type= "radio" name= "technology" value = "${technology.id}"/> ${technology.name}
       </li>`;
     }
   )

@@ -1,13 +1,22 @@
-import { getColors, setColors } from "./database.js";
+import { getColors, setColor } from "./database.js";
 
-const colors = getColors();
+const paintColors = getColors();
+
+document.addEventListener(
+  "change",
+  (event) => {
+  if (event.target.name === "paintColor") {
+      setColor(parseInt(event.target.value))
+  }
+}
+)
 
 export const Colors = () => {
   let html = "<ul>";
 
-  const listItems = colors.map(color => {
+  const listItems = paintColors.map(paintColor => {
     return `<li>
-      <input type= "radio" name= "color" value "${color.id}"/> ${color.name}
+      <input type= "radio" name= "paintColor" value = "${paintColor.id}"/> ${paintColor.name}
       </li>`;
     }
   )

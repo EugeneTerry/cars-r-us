@@ -3,6 +3,7 @@ import {Interiors} from './interior.js'
 import {Technologies} from './technology.js'
 import {Wheels} from './wheels.js'
 import {Orders} from './order.js'
+import { addPurchase } from './database.js'
 
 //import {Orders} from './order.js'
 //eventListener will go here later
@@ -10,10 +11,9 @@ import {Orders} from './order.js'
 document.addEventListener(
   "click",
   (event) => {
-    if (event.target.id === "purchase") {
+    if (event.target.id === "purchaseButton") {
       addPurchase()
-      FoodTruck()
-
+      CarsRUs()
     }
 }
 )
@@ -22,7 +22,7 @@ export const CarsRUs = () => {
   return `
         <header class="header">
             <img src="./images/hummus.png" class="logo" />
-            <h1 class="title">Laura Kathryn's House of Hummus</h1>
+            <h1 class="title">Cars 'R Us</h1>
         </header>
         <article class = "choices">
           <section class = "choices__color options">

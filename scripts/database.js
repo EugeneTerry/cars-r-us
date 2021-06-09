@@ -35,7 +35,7 @@ const database = {
       colorId: 2,
       interiorId: 3,
       technologyId: 4,
-      wheelId: 5
+      wheelId: 4
     }
   ]
 }
@@ -57,21 +57,25 @@ export const getWheels = (id) => {
   return database.wheels.map(wheel => ({...wheel}));
 };
 
+export const getPurchases = (id) => {
+  return database.purchases.map(purchase => ({...purchase}));
+}
+
 //export data to be set in to temp arrays
 
-export const setColors = (id) => {
+export const setColor = (id) => {
   database.carChoices.colorId = id;
 }
 
-export const setInteriors = (id) => {
+export const setInterior = (id) => {
   database.carChoices.interiorId = id;
 }
 
-export const setTechnologies = (id) => {
+export const setTechnology = (id) => {
   database.carChoices.technologyId = id;
 }
 
-export const setWheels = (id) => {
+export const setWheel = (id) => {
   database.carChoices.wheelId = id;
 }
 
